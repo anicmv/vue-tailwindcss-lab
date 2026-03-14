@@ -1,3 +1,17 @@
+<!--
+Tailwind 样式笔记（BackHome）：
+- 语法拆解示例：
+  1) `px-3` = `p`(padding) + `x`(left/right) + `3`(0.75rem = 12px)。
+  2) `py-2` = `p` + `y`(top/bottom) + `2`(0.5rem = 8px)。
+  3) `text-sm` = font-size token（0.875rem），不是 spacing。
+  4) `hover:bg-white/80` = hover 状态下背景白色 80% 不透明度。
+- 本组件关键类：
+  1) `fixed z-[1000]`：固定定位并提升层级（arbitrary z-index）。
+  2) `rounded-full border border-slate-200/80`：胶囊圆角 + 浅色边框。
+  3) `bg-white/70 backdrop-blur-sm`：半透明底 + 背景轻模糊。
+  4) `text-slate-700 shadow-[...]`：深灰文字 + 自定义轻阴影。
+  5) `cursor-grab active:cursor-grabbing select-none`：拖拽手势与防文字选中。
+-->
 <template>
     <div
         ref="btnRef"
