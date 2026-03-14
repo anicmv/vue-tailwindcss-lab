@@ -1,15 +1,16 @@
 <!--
 Tailwind 样式笔记（MultiColumnWaterfall）：
-- 语法拆解示例：
-  1) `p-[5px]` = `p`(padding) + `[5px]`(arbitrary value，自定义值)。
+- 命名拆解：
+  1) `p-[5px]` = `p`(padding) + arbitrary value `[5px]`。
   2) `mb-[5px]` = `m`(margin) + `b`(bottom) + `[5px]`。
-  3) `max-[980px]:columns-4` = 在 `max-width:980px` 条件下应用 `columns-4`。
-- 本页关键类：
-  1) `w-full p-[5px]`：容器宽度 100%，四周 5px 内边距。
-  2) `columns-5 gap-[5px]`：5 列瀑布流，列间距 5px。
-  3) `max-[980px]:columns-4 max-[750px]:columns-2`：响应式列数降级。
-  4) `break-inside-avoid`：避免单个图片块在列内被拆分。
-  5) `block w-full`：图片块级显示并铺满父容器宽度。
+  3) `max-[980px]:columns-4` = 在 `max-width: 980px` 条件下启用 4 列。
+- 本文件 class 全量说明：
+  1) `p-[5px]`：主容器四周 5px 内边距。
+  2) `columns-5`：使用 CSS multi-column，列数 5。
+  3) `gap-[5px]`：列间距 5px。
+  4) `max-[980px]:columns-4`：<=980px 时改为 4 列。
+  5) `max-[750px]:columns-2`：<=750px 时改为 2 列。
+  6) `mb-[5px]`：每个图片块底部间距 5px。
 -->
 <template>
   <main class="p-[5px]">

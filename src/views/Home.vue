@@ -1,41 +1,60 @@
 <!--
 Tailwind 样式笔记（Home）：
-- 先看命名规则：
-  1) `px-5` = `p`(padding) + `x`(left/right) + `5`(spacing scale 5 = 1.25rem = 20px)。
-  2) `py-14` = `p` + `y`(top/bottom) + `14`(3.5rem = 56px)。
-  3) `mt-3` = `m`(margin) + `t`(top) + `3`(0.75rem = 12px)。
-  4) `text-4xl` 是字体大小 token，不是 spacing；`md:text-5xl` 表示在 `md` 断点及以上生效。
-- 本页关键类：
-  1) `min-h-screen`：`min-height: 100vh`，至少一屏高。
-  2) `bg-[#f7f7f8]`：自定义背景色（方括号是 arbitrary value）。
-  3) `px-5 py-14`：主容器水平 20px、垂直 56px 内边距。
-  4) `mx-auto max-w-5xl`：左右外边距 auto（居中）+ 最大宽度 `64rem`（1024px）。
-  5) `grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`：默认 1 列，`sm` 起 2 列，`lg` 起 3 列。
-  6) `gap-4`：网格行列间距 `1rem`（16px）。
-  7) `rounded-2xl border p-6`：圆角 `1rem`、细边框、内边距 `1.5rem`（24px）。
+- 仅当前文件实际使用的 class：
+  1) `min-h-screen`：最小高度 100vh。
+  2) `bg-gray-50`：页面浅灰背景。
+  3) `mx-auto`：容器水平居中。
+  4) `max-w-7xl`：最大宽度 1280px。
+  5) `px-4`：左右内边距 16px。
+  6) `py-4`：上下内边距 16px。
+  7) `sm:px-6`：`sm` 断点及以上左右内边距 24px。
+  8) `lg:px-8`：`lg` 断点及以上左右内边距 32px。
+  9) `pt-10`：上内边距 40px。
+  10) `grid`：网格布局。
+  11) `grid-cols-1`：默认 1 列。
+  12) `gap-4`：网格间距 16px。
+  13) `sm:grid-cols-2`：小屏及以上 2 列。
+  14) `lg:grid-cols-3`：大屏及以上 4 列。
+  15) `rounded-lg`：中等圆角。
+  16) `bg-white`：白色卡片背景。
+  17) `p-5`：卡片内边距 20px。
+  18) `shadow`：默认阴影。
+  19) `transition`：过渡动画。
+  20) `hover:border-[#d1d5db]`：悬停边框颜色。
+  21) `hover:shadow-[0_8px_24px_rgba(16,24,40,0.08)]`：悬停阴影增强。
+  22) `text-xs`：小字号。
+  23) `font-medium`：字重 500。
+  24) `uppercase`：大写。
+  25) `tracking-[0.16em]`：自定义字距。
+  26) `text-[#9ca3af]`：浅灰文字色。
+  27) `mt-3`：上外边距 12px。
+  28) `text-xl`：标题字号。
+  29) `font-semibold`：字重 600。
+  30) `text-[#111827]`：深灰文字色。
+  31) `p-4`：四个方向的内边距都是 16px。
 -->
 <template>
-  <main class="min-h-screen bg-[#f7f7f8] px-5 py-14 text-[#111827]">
-    <section class="mx-auto max-w-5xl">
-      <h1 class="text-center text-4xl font-semibold tracking-tight md:text-5xl">Tailwind CSS Lab Gallery</h1>
-      <p class="mt-3 text-center text-[#6b7280]">选择一个页面开始浏览</p>
-      <div class="mx-auto mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <router-link
-        v-for="page in pageList"
-        :key="page.name"
-        :to="page.path"
-        class="group rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition hover:border-[#d1d5db] hover:shadow-[0_8px_24px_rgba(16,24,40,0.08)]"
-      >
-          <p class="text-xs font-medium uppercase tracking-[0.16em] text-[#9ca3af]">Demo {{ page.index }}</p>
-          <h2 class="mt-3 text-xl font-semibold text-[#111827]">{{ page.title }}</h2>
-      </router-link>
+  <div class="min-h-screen bg-gray-50">
+    <main class="mx-auto max-w-7xl p-4 sm:px-6 lg:px-8">
+      <div class="pt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <router-link
+            v-for="page in pageList"
+            :key="page.name"
+            :to="page.path"
+        >
+          <section
+              class="rounded-lg bg-white p-5 shadow transition hover:border-[#d1d5db] hover:shadow-[0_8px_24px_rgba(16,24,40,0.08)]">
+            <p class="text-xs font-medium uppercase tracking-[0.16em] text-[#9ca3af]">Demo {{ page.index }}</p>
+            <h2 class="mt-3 text-xl font-semibold text-[#111827]">{{ page.title }}</h2>
+          </section>
+        </router-link>
       </div>
-    </section>
-  </main>
+    </main>
+  </div>
 </template>
 
 <script setup>
-import { pages } from '../router/index.js'
+import {pages} from '../router/index.js'
 
 const pageList = pages.map((p, i) => ({
   ...p,

@@ -1,16 +1,68 @@
 <!--
 Tailwind 样式笔记（TopNavBar）：
-- 语法拆解示例：
-  1) `h-16` = `height: 4rem`（64px）；`md:h-14` 这种写法表示在断点覆盖高度。
-  2) `px-6` = `p`(padding) + `x`(left/right) + `6`(1.5rem = 24px)。
-  3) `max-w-6xl mx-auto` = 最大宽度 + 水平居中容器。
-  4) `after:scale-x-0 hover:after:scale-x-100` = 伪元素下划线从 0 到 100% 展开。
-- 本页关键类：
-  1) `sticky top-0 z-40`：导航吸顶并保持层级。
-  2) `border-b bg-white/95 backdrop-blur`：轻分割线和半透明磨砂顶栏。
-  3) `flex items-center justify-between`：左品牌右菜单布局。
-  4) `uppercase text-sm tracking-[0.08em]`：菜单文字风格统一。
-  5) `focus-visible:outline-*`：键盘可访问焦点样式。
+- 命名拆解：
+  1) `px-6` = `p` + `x` + `6`(24px)；`md:px-4` = md 断点改成 16px。
+  2) `md:h-14` = md 及以上高度 56px。
+  3) `focus-visible:*` = 键盘聚焦可见时应用。
+  4) `after:*` = 作用于 `::after` 伪元素。
+- 本文件 class 全量说明：
+  1) `min-h-screen`：最小高度一屏。
+  2) `bg-[#f7f7f8]`：背景色。
+  3) `text-slate-900`：主文字色。
+  4) `sticky`：吸顶定位。
+  5) `top-0`：顶部 0。
+  6) `z-40`：层级 40。
+  7) `w-full`：满宽。
+  8) `border-b`：下边框。
+  9) `border-slate-200`：浅灰边框色。
+  10) `bg-white/95`：95% 白底。
+  11) `backdrop-blur`：背景模糊。
+  12) `mx-auto`：居中。
+  13) `flex`：弹性布局。
+  14) `h-16`：高度 64px。
+  15) `max-w-6xl`：最大宽度 72rem（1152px）。
+  16) `items-center`：纵向居中。
+  17) `justify-between`：两端分布。
+  18) `px-6`：左右 24px。
+  19) `md:h-14`：中屏高度 56px。
+  20) `md:px-4`：中屏左右 16px。
+  21) `shrink-0`：禁止收缩。
+  22) `text-xl`：标题字号。
+  23) `font-bold`：700 字重。
+  24) `tracking-tight`：紧凑字距。
+  25) `overflow-x-auto`：横向溢出可滚动。
+  26) `list-none`：去列表符号。
+  27) `gap-4`：间距 16px。
+  28) `p-0`：内边距 0。
+  29) `md:gap-3`：中屏间距 12px。
+  30) `relative`：相对定位。
+  31) `inline-block`：行内块。
+  32) `whitespace-nowrap`：不换行。
+  33) `px-1`：左右 4px。
+  34) `py-2`：上下 8px。
+  35) `text-sm`：小字号。
+  36) `font-medium`：500 字重。
+  37) `uppercase`：大写。
+  38) `tracking-[0.08em]`：自定义字距。
+  39) `text-slate-700`：默认菜单色。
+  40) `transition-colors`：颜色过渡。
+  41) `hover:text-slate-900`：悬停变深。
+  42) `focus-visible:rounded-sm`：聚焦轻圆角。
+  43) `focus-visible:outline`：显示轮廓。
+  44) `focus-visible:outline-2`：轮廓线宽 2px。
+  45) `focus-visible:outline-offset-4`：轮廓外偏移 4px。
+  46) `focus-visible:outline-sky-300`：轮廓色。
+  47) `after:absolute`：伪元素绝对定位。
+  48) `after:bottom-0`：伪元素贴底。
+  49) `after:left-0`：伪元素左对齐。
+  50) `after:h-0.5`：伪元素高 2px。
+  51) `after:w-full`：伪元素宽 100%。
+  52) `after:origin-left`：缩放原点在左。
+  53) `after:scale-x-0`：初始 X 缩放 0。
+  54) `after:bg-sky-300`：伪元素颜色。
+  55) `after:transition-transform`：伪元素 transform 过渡。
+  56) `hover:after:scale-x-100`：悬停展开下划线。
+  57) `after:scale-x-100`（动态类）：激活菜单保持下划线展开。
 -->
 <template>
   <BackHome />
