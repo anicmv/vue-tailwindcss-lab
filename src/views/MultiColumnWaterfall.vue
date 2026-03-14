@@ -12,18 +12,17 @@ Tailwind 样式笔记（MultiColumnWaterfall）：
   5) `block w-full`：图片块级显示并铺满父容器宽度。
 -->
 <template>
-  <main class="w-full p-[5px]">
+  <main class="p-[5px]">
     <BackHome />
     <section class="columns-5 gap-[5px] max-[980px]:columns-4 max-[750px]:columns-2">
       <div
           v-for="(image, index) in images"
           :key="index"
-          class="mb-[5px] break-inside-avoid"
+          class="mb-[5px]"
       >
         <img
             :src="image"
             :alt="`waterfall-${index + 1}`"
-            class="block w-full"
         >
       </div>
     </section>
