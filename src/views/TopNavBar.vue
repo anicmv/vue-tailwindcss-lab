@@ -1,89 +1,97 @@
 <!--
 Tailwind 样式笔记（TopNavBar）：
-- 命名拆解：
-  1) `px-6` = `p` + `x` + `6`(24px)；`md:px-4` = md 断点改成 16px。
-  2) `md:h-14` = md 及以上高度 56px。
-  3) `focus-visible:*` = 键盘聚焦可见时应用。
-  4) `after:*` = 作用于 `::after` 伪元素。
+- 命名拆解（你关心的 `px-5` 这类）：
+  1) `p` = padding（内边距）。
+  2) `m` = margin（外边距）。
+  3) `x` = 水平方向（left + right），`y` = 垂直方向（top + bottom）。
+  4) `px-5` = 左右内边距都为 spacing scale 的 5（Tailwind 默认 1.25rem = 20px）。
+  5) `px-4` = 左右内边距 1rem（16px）；`px-3` = 0.75rem（12px）；`px-8` = 2rem（32px）。
+  6) `py-2` = 上下内边距 0.5rem（8px）。
+  7) `h-16` = 高度 4rem（64px）；`h-7` = 高度 1.75rem（28px）；`w-7` = 宽度 1.75rem（28px）。
+  8) `text-lg` / `text-sm` / `text-xs` = 字号预设。
+  9) `font-semibold` / `font-medium` / `font-bold` = 字重预设。
+  10) `rounded-md` / `rounded-lg` = 圆角预设。
+  11) `bg-*` / `text-*` / `border-*` = 背景色 / 文字色 / 边框色。
+  12) `border-b` = 仅下边框。
+  13) `sticky top-0` = 吸顶并固定在顶部 0。
+  14) `z-50` = 层级 50。
+  15) `backdrop-blur-xl` = 背景模糊（用于半透明顶栏）。
+  16) `sm:*` / `lg:*` = 在对应断点及以上生效（响应式前缀）。
+  17) `hover:*` = hover 状态生效；`transition` = 过渡动画。
+
 - 本文件 class 全量说明：
-  1) `min-h-screen`：最小高度一屏。
-  2) `bg-[#f7f7f8]`：背景色。
-  3) `text-slate-900`：主文字色。
-  4) `sticky`：吸顶定位。
-  5) `top-0`：顶部 0。
-  6) `z-40`：层级 40。
-  7) `w-full`：满宽。
-  8) `border-b`：下边框。
-  9) `border-slate-200`：浅灰边框色。
-  10) `bg-white/95`：95% 白底。
-  11) `backdrop-blur`：背景模糊。
-  12) `mx-auto`：居中。
-  13) `flex`：弹性布局。
-  14) `h-16`：高度 64px。
-  15) `max-w-6xl`：最大宽度 72rem（1152px）。
-  16) `items-center`：纵向居中。
-  17) `justify-between`：两端分布。
-  18) `px-6`：左右 24px。
-  19) `md:h-14`：中屏高度 56px。
-  20) `md:px-4`：中屏左右 16px。
-  21) `shrink-0`：禁止收缩。
-  22) `text-xl`：标题字号。
-  23) `font-bold`：700 字重。
-  24) `tracking-tight`：紧凑字距。
-  25) `overflow-x-auto`：横向溢出可滚动。
-  26) `list-none`：去列表符号。
-  27) `gap-4`：间距 16px。
-  28) `p-0`：内边距 0。
-  29) `md:gap-3`：中屏间距 12px。
-  30) `relative`：相对定位。
-  31) `inline-block`：行内块。
-  32) `whitespace-nowrap`：不换行。
-  33) `px-1`：左右 4px。
-  34) `py-2`：上下 8px。
-  35) `text-sm`：小字号。
-  36) `font-medium`：500 字重。
-  37) `uppercase`：大写。
-  38) `tracking-[0.08em]`：自定义字距。
-  39) `text-slate-700`：默认菜单色。
-  40) `transition-colors`：颜色过渡。
-  41) `hover:text-slate-900`：悬停变深。
-  42) `focus-visible:rounded-sm`：聚焦轻圆角。
-  43) `focus-visible:outline`：显示轮廓。
-  44) `focus-visible:outline-2`：轮廓线宽 2px。
-  45) `focus-visible:outline-offset-4`：轮廓外偏移 4px。
-  46) `focus-visible:outline-sky-300`：轮廓色。
-  47) `after:absolute`：伪元素绝对定位。
-  48) `after:bottom-0`：伪元素贴底。
-  49) `after:left-0`：伪元素左对齐。
-  50) `after:h-0.5`：伪元素高 2px。
-  51) `after:w-full`：伪元素宽 100%。
-  52) `after:origin-left`：缩放原点在左。
-  53) `after:scale-x-0`：初始 X 缩放 0。
-  54) `after:bg-sky-300`：伪元素颜色。
-  55) `after:transition-transform`：伪元素 transform 过渡。
-  56) `hover:after:scale-x-100`：悬停展开下划线。
-  57) `after:scale-x-100`（动态类）：激活菜单保持下划线展开。
+  1) `min-h-screen`：最小高度为一屏（100vh）。
+  2) `bg-slate-50`：浅灰背景。
+  3) `text-slate-900`：深色主文本。
+  4) `sticky`：粘性定位。
+  5) `top-0`：距离顶部 0。
+  6) `z-50`：层级较高，避免被正文遮挡。
+  7) `border-b`：底部边框。
+  8) `border-slate-200/80`：80% 透明度的浅灰边框。
+  9) `bg-white/80`：80% 透明白色背景。
+  10) `backdrop-blur-xl`：背景大模糊。
+  11) `mx-auto`：水平居中。
+  12) `max-w-7xl`：最大宽度 80rem（1280px）。
+  13) `px-4`：左右内边距 16px。
+  14) `sm:px-6`：`sm` 及以上左右内边距 24px。
+  15) `lg:px-8`：`lg` 及以上左右内边距 32px。
+  16) `flex`：弹性布局。
+  17) `h-16`：高度 64px。
+  18) `items-center`：交叉轴居中（垂直居中）。
+  19) `justify-between`：主轴两端对齐。
+  20) `gap-2`：元素间距 8px。
+  21) `text-lg`：较大标题字号。
+  22) `font-semibold`：600 字重。
+  23) `tracking-tight`：紧凑字距。
+  24) `inline-flex`：行内弹性布局。
+  25) `h-7`：高度 28px。
+  26) `w-7`：宽度 28px。
+  27) `justify-center`：主轴居中。
+  28) `rounded-md`：中等圆角。
+  29) `bg-slate-900`：深色背景。
+  30) `text-xs`：较小字号。
+  31) `font-bold`：700 字重。
+  32) `text-white`：白色文字。
+  33) `gap-1`：元素间距 4px。
+  34) `rounded-lg`：较大圆角。
+  35) `px-3`：左右内边距 12px。
+  36) `py-2`：上下内边距 8px。
+  37) `text-sm`：小字号。
+  38) `font-medium`：500 字重。
+  39) `transition`：常用属性过渡动画。
+  40) `text-slate-600`：中灰文字。
+  41) `hover:bg-slate-100`：悬停浅灰背景。
+  42) `hover:text-slate-900`：悬停文字加深。
 -->
 <template>
   <BackHome />
-  <div class="min-h-screen bg-[#f7f7f8] text-slate-900">
-    <header class="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:h-14 md:px-4">
-        <a href="#" class="shrink-0 text-xl font-bold tracking-tight text-slate-900">MySite</a>
-        <nav aria-label="Main navigation" class="overflow-x-auto">
-          <ul class="flex list-none items-center gap-4 p-0 md:gap-3">
-            <li v-for="item in navItems" :key="item.name">
-              <a
-                href="#"
-                :aria-current="item.active ? 'page' : undefined"
-                class="relative inline-block whitespace-nowrap px-1 py-2 text-sm font-medium uppercase tracking-[0.08em] text-slate-700 transition-colors hover:text-slate-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-sky-300 after:transition-transform hover:after:scale-x-100"
-                :class="item.active ? 'text-slate-900 after:scale-x-100' : ''"
-              >
-                {{ item.name }}
-              </a>
-            </li>
-          </ul>
-        </nav>
+  <div class="min-h-screen bg-slate-50 text-slate-900">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#" class="flex items-center gap-2 text-lg font-semibold tracking-tight text-slate-900">
+            MySite
+          </a>
+
+          <nav aria-label="Main navigation">
+            <ul class="flex items-center gap-1">
+              <li v-for="item in navItems" :key="item.name">
+                <a
+                  href="#"
+                  :aria-current="item.active ? 'page' : undefined"
+                  class="rounded-lg px-3 py-2 text-sm font-medium transition"
+                  :class="
+                    item.active
+                      ? 'bg-slate-100 text-slate-900'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                  "
+                >
+                  {{ item.name }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   </div>
