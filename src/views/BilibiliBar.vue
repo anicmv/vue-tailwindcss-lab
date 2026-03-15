@@ -82,8 +82,8 @@ Tailwind 样式笔记（BilibiliBar）：
   <div class="min-h-screen text-sm text-white">
     <header class="px-6 h-16 fixed top-0 left-0 right-0 z-50">
       <div class="flex h-full items-center justify-between">
-        <ul class="flex gap-4">
-          <li>
+        <ul class="flex items-center justify-between gap-4">
+          <li class="flex items-center justify-between">
             <a href="#" class="inline-flex items-center gap-2">
               <svg
                   class="w-[18px] h-[18px]"
@@ -172,9 +172,9 @@ Tailwind 样式笔记（BilibiliBar）：
           </div>
         </div>
         <ul class="flex gap-4">
-          <li>
+          <li class="flex items-center justify-center">
             <div>
-              <a href="">
+              <a href="#">
                 <picture>
                   <img
                       :src="avatarImage"
@@ -270,10 +270,9 @@ Tailwind 样式笔记（BilibiliBar）：
               <span>创作中心</span>
             </a>
           </li>
-          <li class="mx-[15px]"></li>
-          <li class="inline-flex items-center">
+          <li class="flex items-center justify-center">
             <a href="#">
-              <div class="inline-flex items-center justify-center gap-1 w-[90px] h-[34px] bg-[rgb(251,114,153)] text-white rounded-lg ml-4">
+              <div class="flex items-center justify-center gap-1 w-[90px] h-[34px] bg-[rgb(251,114,153)] text-white rounded-lg ">
                 <svg
                     class="w-[18px] h-[18px]"
                     viewBox="0 0 18 18"
@@ -285,7 +284,6 @@ Tailwind 样式笔记（BilibiliBar）：
                 </svg>
                 <span>投稿</span>
               </div>
-
             </a>
           </li>
         </ul>
