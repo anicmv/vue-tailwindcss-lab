@@ -78,6 +78,7 @@ Tailwind 样式笔记（BilibiliBar）：
   75) `bg-center`：背景图居中显示。
 -->
 <template>
+  <BackHome />
   <div class="min-h-screen text-sm text-white">
     <header class="px-6 h-16 fixed top-0 left-0 right-0 z-50">
       <div class="flex h-full items-center justify-between">
@@ -303,4 +304,5 @@ Tailwind 样式笔记（BilibiliBar）：
 <script setup>
 import bgImage from '../assets/images/bilibili/blibili-banner.avif'
 import avatarImage from '../assets/images/avater.png'
+import BackHome from '@/components/BackHome.vue'
 </script>
