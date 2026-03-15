@@ -44,6 +44,12 @@ export const pages = [
     path: '/progress-steps',
     component: () => import('../views/ProgressSteps.vue'),
   },
+  {
+    name: 'BilibiliBar',
+    title: '哔哩哔哩导航栏',
+    path: '/bilibili-bar',
+    component: () => import('../views/BilibiliBar.vue'),
+  },
 ]
 
 const router = createRouter({
