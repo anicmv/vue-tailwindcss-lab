@@ -16,58 +16,58 @@ Tailwind 样式笔记（BilibiliBar）：
   13) `items-center`：交叉轴居中对齐。
   14) `justify-between`：主轴两端对齐。
   15) `gap-4`：间距 16px。
-  16) `inline-flex`：行内弹性布局。
-  17) `gap-2`：间距 8px。
-  18) `w-[18px]`：宽度 18px。
-  19) `h-[18px]`：高度 18px。
-  20) `font-medium`：字重 500。
-  21) `w-[16px]`：宽度 16px。
-  22) `h-[16px]`：高度 16px。
-  23) `group`：分组状态容器（供子元素联动）。
-  24) `w-[500px]`：宽度 500px。
-  25) `h-[40px]`：高度 40px。
-  26) `bg-white/90`：90% 不透明白色背景。
-  27) `rounded-lg`：较大圆角。
-  28) `hover:bg-white`：悬停时白色背景。
-  29) `focus-within:bg-white`：子元素聚焦时背景变白。
-  30) `transition-colors`：颜色变化过渡动画。
-  31) `text-black`：文字颜色黑色。
-  32) `w-[445px]`：宽度 445px。
-  33) `border-0`：边框宽度 0。
-  34) `outline-none`：移除默认 outline。
-  35) `ring-0`：移除 ring 效果。
-  36) `rounded-md`：中等圆角。
-  37) `mx-[5px]`：左右外边距 5px。
-  38) `px-[8px]`：左右内边距 8px。
-  39) `py-[5px]`：上下内边距 5px。
-  40) `bg-transparent`：透明背景。
-  41) `focus:bg-gray-300/40`：聚焦时浅灰半透明背景。
-  42) `focus:border-0`：聚焦时边框仍为 0。
-  43) `focus:outline-none`：聚焦时移除 outline。
-  44) `focus:ring-0`：聚焦时移除 ring。
-  45) `ml-[2px]`：左外边距 2px。
-  46) `mr-[6px]`：右外边距 6px。
-  47) `p-[6px]`：内边距 6px。
-  48) `hover:bg-gray-300/40`：悬停时浅灰半透明背景。
-  49) `w-[17px]`：宽度 17px。
-  50) `h-[17px]`：高度 17px。
-  51) `w-[38px]`：宽度 38px。
-  52) `h-[38px]`：高度 38px。
-  53) `rounded-full`：圆形（50% 圆角）。
-  54) `object-cover`：图片按比例裁切填充。
-  55) `border-2`：边框宽度 2px。
-  56) `border-white`：边框颜色白色。
-  57) `flex-col`：主轴改为纵向。
-  58) `justify-center`：主轴居中对齐。
-  59) `gap-1`：间距 4px。
-  60) `w-[20px]`：宽度 20px。
-  61) `h-[20px]`：高度 20px。
-  62) `h-[21px]`：高度 21px。
-  63) `mx-[15px]`：左右外边距 15px。
-  64) `w-[90px]`：宽度 90px。
-  65) `h-[34px]`：高度 34px。
-  66) `bg-[rgb(251,114,153)]`：自定义粉色背景。
-  67) `ml-4`：左外边距 16px。
+  16) `shrink-0`：禁止项目在 flex 容器中收缩。
+  17) `inline-flex`：行内弹性布局。
+  18) `gap-2`：间距 8px。
+  19) `w-[18px]`：宽度 18px。
+  20) `h-[18px]`：高度 18px。
+  21) `font-medium`：字重 500。
+  22) `w-[16px]`：宽度 16px。
+  23) `h-[16px]`：高度 16px。
+  24) `group`：分组状态容器（供子元素联动）。
+  25) `w-[500px]`：宽度 500px。
+  26) `h-[40px]`：高度 40px。
+  27) `bg-white/90`：90% 不透明白色背景。
+  28) `rounded-lg`：较大圆角。
+  29) `hover:bg-white`：悬停时白色背景。
+  30) `focus-within:bg-white`：子元素聚焦时背景变白。
+  31) `transition-colors`：颜色变化过渡动画。
+  32) `mx-5`：左右外边距 20px。
+  33) `text-black`：文字颜色黑色。
+  34) `w-[445px]`：宽度 445px。
+  35) `border-0`：边框宽度 0。
+  36) `outline-none`：移除默认 outline。
+  37) `ring-0`：移除 ring 效果。
+  38) `rounded-md`：中等圆角。
+  39) `mx-[5px]`：左右外边距 5px。
+  40) `px-[8px]`：左右内边距 8px。
+  41) `py-[5px]`：上下内边距 5px。
+  42) `bg-transparent`：透明背景。
+  43) `focus:bg-gray-300/40`：聚焦时浅灰半透明背景。
+  44) `focus:border-0`：聚焦时边框仍为 0。
+  45) `focus:outline-none`：聚焦时移除 outline。
+  46) `focus:ring-0`：聚焦时移除 ring。
+  47) `ml-[2px]`：左外边距 2px。
+  48) `mr-[6px]`：右外边距 6px。
+  49) `p-[6px]`：内边距 6px。
+  50) `hover:bg-gray-300/40`：悬停时浅灰半透明背景。
+  51) `w-[17px]`：宽度 17px。
+  52) `h-[17px]`：高度 17px。
+  53) `w-[38px]`：宽度 38px。
+  54) `h-[38px]`：高度 38px。
+  55) `rounded-full`：圆形（50% 圆角）。
+  56) `object-cover`：图片按比例裁切填充。
+  57) `border-2`：边框宽度 2px。
+  58) `border-white`：边框颜色白色。
+  59) `flex-col`：主轴改为纵向。
+  60) `justify-center`：主轴居中对齐。
+  61) `gap-1`：间距 4px。
+  62) `w-[20px]`：宽度 20px。
+  63) `h-[20px]`：高度 20px。
+  64) `h-[21px]`：高度 21px。
+  65) `w-[90px]`：宽度 90px。
+  66) `h-[34px]`：高度 34px。
+  67) `bg-[rgb(251,114,153)]`：自定义粉色背景。
   68) `relative`：相对定位。
   69) `w-full`：宽度 100%。
   70) `h-[155px]`：高度 155px。
