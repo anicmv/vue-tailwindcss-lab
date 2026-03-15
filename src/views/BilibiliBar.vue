@@ -82,7 +82,7 @@ Tailwind 样式笔记（BilibiliBar）：
   <div class="min-h-screen text-sm text-white">
     <header class="px-6 h-16 fixed top-0 left-0 right-0 z-50">
       <div class="flex h-full items-center justify-between">
-        <ul class="flex items-center justify-between gap-4">
+        <ul class="flex items-center justify-between gap-4 shrink-0">
           <li class="flex items-center justify-between">
             <a href="#" class="inline-flex items-center gap-2">
               <svg
@@ -146,7 +146,7 @@ Tailwind 样式笔记（BilibiliBar）：
             </a>
           </li>
         </ul>
-        <div class="group w-[500px] h-[40px] bg-white/90 rounded-lg hover:bg-white focus-within:bg-white transition-colors">
+        <div class="group w-[500px] h-[40px] bg-white/90 rounded-lg hover:bg-white focus-within:bg-white transition-colors mx-5">
           <div class="flex h-full items-center justify-between text-black">
             <input class="w-[445px] border-0 outline-none ring-0 rounded-md mx-[5px] px-[8px] py-[5px] bg-transparent focus:bg-gray-300/40 focus:border-0 focus:outline-none focus:ring-0 transition-colors"
                    type="text"
@@ -171,7 +171,7 @@ Tailwind 样式笔记（BilibiliBar）：
             </div>
           </div>
         </div>
-        <ul class="flex gap-4">
+        <ul class="flex gap-4 shrink-0">
           <li class="flex items-center justify-center">
             <div>
               <a href="#">
